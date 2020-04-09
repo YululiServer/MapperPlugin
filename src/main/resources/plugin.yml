@@ -1,0 +1,19 @@
+name: MapperPlugin
+main: xyz.acrylicstyle.mapper.Mapper
+version: 1.0-SNAPSHOT
+commands:
+  flyspeed:
+    description: "Sets fly speed."
+    usage: "/<command> <-1~1>"
+  mapperhelp:
+    description: "Shows help"
+    aliases: ["helpmapper", "maphelp"]
+  fly:
+    description: "Toggles flyable state."
+    aliases: ["togglefly"]
+  export:
+    description: "Exports world"
+    aliases: ["exportworld"]
+  respawn:
+    description: "Respawns specified player"
+    usage: "/<command> <player>"
