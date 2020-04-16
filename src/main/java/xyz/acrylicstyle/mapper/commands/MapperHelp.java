@@ -1,22 +1,16 @@
 package xyz.acrylicstyle.mapper.commands;
 
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import xyz.acrylicstyle.tomeito_api.command.OpCommandExecutor;
 
-public class MapperHelp implements CommandExecutor {
+public class MapperHelp extends OpCommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.isOp()) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to do that.");
-            return true;
-        }
+    public void onCommand(CommandSender sender, String[] args) {
         sender.sendMessage(constructHelp("/flyspeed <-10~10>", "浮遊速度を設定します。0未満に設定すると反対方向に移動します。"));
         sender.sendMessage(constructHelp("/fly", "浮遊状態を変更します。"));
         sender.sendMessage(constructHelp("/export <ワールド>", "ワールドを外部にエクスポートします。"));
         sender.sendMessage(constructHelp("/respawn <プレイヤー>", "プレイヤーを強制的にリスポーンさせます。"));
-        return true;
     }
 
     public String constructHelp(String cmd, String description) {

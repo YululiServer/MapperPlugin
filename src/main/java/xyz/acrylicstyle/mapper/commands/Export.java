@@ -4,32 +4,27 @@ import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.scheduler.BukkitRunnable;
 import xyz.acrylicstyle.mapper.Mapper;
 import xyz.acrylicstyle.mapper.utils.Utils;
-import xyz.acrylicstyle.tomeito_core.utils.Log;
+import xyz.acrylicstyle.tomeito_api.command.OpCommandExecutor;
+import xyz.acrylicstyle.tomeito_api.utils.Log;
 
 import java.io.File;
 import java.io.IOException;
 
-public class Export implements CommandExecutor {
+public class Export extends OpCommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.isOp()) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to do that.");
-            return true;
-        }
+    public void onCommand(CommandSender sender, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(ChatColor.RED + "You must specify world.");
-            return true;
+            return;
         }
         World world = Bukkit.getWorld(args[0]);
         if (world == null) {
             sender.sendMessage(ChatColor.RED + "World " + args[0] + " could not be found.");
-            return true;
+            return;
         }
         world.save();
         String dir = "./" + world.getName();
@@ -59,6 +54,5 @@ public class Export implements CommandExecutor {
                 }
             }
         }.runTaskAsynchronously(Mapper.getInstance());
-        return true;
     }
 }

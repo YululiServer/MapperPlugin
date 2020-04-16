@@ -16,7 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import xyz.acrylicstyle.mapper.commands.*;
 import xyz.acrylicstyle.mapper.utils.Utils;
-import xyz.acrylicstyle.tomeito_core.utils.Log;
+import xyz.acrylicstyle.tomeito_api.utils.Log;
 
 public class Mapper extends JavaPlugin implements Listener {
     private static Mapper instance;

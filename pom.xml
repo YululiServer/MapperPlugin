@@ -63,8 +63,8 @@
     <dependencies>
         <dependency>
             <groupId>xyz.acrylicstyle</groupId>
-            <artifactId>tomeito_lib</artifactId>
-            <version>0.1.45</version>
+            <artifactId>tomeito_plugin</artifactId>
+            <version>0.3.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -98,6 +98,11 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
 </project>

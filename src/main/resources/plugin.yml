@@ -1,6 +1,8 @@
 name: MapperPlugin
 main: xyz.acrylicstyle.mapper.Mapper
 version: 1.0-SNAPSHOT
+softdepend:
+  - TomeitoLib
 commands:
   flyspeed:
     description: "Sets fly speed."

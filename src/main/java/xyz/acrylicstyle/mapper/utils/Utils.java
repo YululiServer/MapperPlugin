@@ -12,7 +12,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import xyz.acrylicstyle.tomeito_core.utils.Log;
+import xyz.acrylicstyle.tomeito_api.utils.Log;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -60,9 +60,10 @@ public final class Utils {
         return sb.toString();
     }
 
-    private static List<String> fileList = new ArrayList<>();
+    private static final List<String> fileList = new ArrayList<>();
 
     public static void compressDirectory(String dir, String zipFile) {
+        fileList.clear();
         File directory = new File(dir);
         getFileList(directory);
         try (FileOutputStream fos = new FileOutputStream(zipFile); ZipOutputStream zos = new ZipOutputStream(fos)) {
