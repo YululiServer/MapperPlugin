@@ -23,9 +23,7 @@ public class Mapper extends JavaPlugin implements Listener {
     private boolean disableEvents = false;
 
     @Override
-    public void onLoad() {
-        instance = this;
-    }
+    public void onLoad() { instance = this; }
 
     @Override
     public void onEnable() {
@@ -45,14 +43,10 @@ public class Mapper extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        doJob(e.getPlayer());
-    }
+    public void onPlayerJoin(PlayerJoinEvent e) { doJob(e.getPlayer()); }
 
     @EventHandler
-    public void onPlayerRespawn(PlayerRespawnEvent e) {
-        doJob(e.getPlayer());
-    }
+    public void onPlayerRespawn(PlayerRespawnEvent e) { doJob(e.getPlayer()); }
 
     @EventHandler
     public void onPlayerChangedWorld(PlayerChangedWorldEvent e) {
